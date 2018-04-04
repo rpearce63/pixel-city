@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsCompass="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9w-nM-GqV">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="666"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JzL-Bv-fiM">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
@@ -48,7 +48,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jl-4y-oEu">
-                                <rect key="frame" x="317" y="597" width="50" height="50"/>
+                                <rect key="frame" x="317" y="596" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0Ig-Ou-21a"/>
                                     <constraint firstAttribute="width" constant="50" id="dT8-DR-IQu"/>
@@ -58,9 +58,12 @@
                                     <action selector="centerMapBtnWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UNX-WF-qJm"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOH-uc-BVB">
-                                <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOH-uc-BVB" userLabel="Flickr View">
+                                <rect key="frame" x="0.0" y="666" width="375" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="0m1-FK-EmF"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -75,14 +78,16 @@
                             <constraint firstItem="L9w-nM-GqV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Swg-c5-aaf"/>
                             <constraint firstItem="JzL-Bv-fiM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="WXg-UJ-zCG"/>
                             <constraint firstItem="L9w-nM-GqV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="YYr-jl-Vzr"/>
-                            <constraint firstItem="L9w-nM-GqV" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="eYH-GS-ZHF"/>
                             <constraint firstItem="bOH-uc-BVB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kyo-Ij-cM1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6jl-4y-oEu" secondAttribute="bottom" constant="20" id="nEj-VJ-b96"/>
+                            <constraint firstItem="bOH-uc-BVB" firstAttribute="top" secondItem="6jl-4y-oEu" secondAttribute="bottom" constant="20" id="vNO-el-lEg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="L9w-nM-GqV" id="aZe-No-ZCS"/>
+                        <outlet property="mapViewBottomConstraint" destination="bOH-uc-BVB" id="aZt-Es-0XO"/>
+                        <outlet property="pullUpView" destination="bOH-uc-BVB" id="rpm-je-lzw"/>
+                        <outlet property="pullUpViewHeightConstraint" destination="0m1-FK-EmF" id="mI3-jP-kDk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
